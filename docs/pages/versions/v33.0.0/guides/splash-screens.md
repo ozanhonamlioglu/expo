@@ -97,9 +97,9 @@ There is a slight difference when it comes down to **standalone Android applicat
 In this scenario extra attention should be paid to [`android.splash` section](../../workflow/configuration/#android) configuration inside [`app.json`](../../workflow/configuration/#android).
 
 Depending on the `resizeMode` you will get the following behavior:
-- **cover** - In this mode your app will be leveraging Android's ability to present a static bitmap at the very beginning of the application start. Unfortunately, Android (unlike iOS) is not supporting stretching provided image, so the application will just present given image centered on the screen.
-By default `splash.image` would be used as the `mdpi` resource. It's up to you to provide graphics that meet your expectations and fit the screen dimension. To achieve this, use different resolutions for [different device DPIs](../../workflow/configuration/#android), from `mdpi` to `xxxhdpi`.
-- **contain** - As described in `cover` mode it isn't possible to dynamically adjust image to the screen size at the very beginning of the application start. Therefore, in this mode, at first only background color will be presented and then, when some view hierarchy is mounted, `splash.image` will be shown.
+- **contain** - Android SplashScreen API is unable to stretch/scale splash image (see **native** mode). This mode would instruct device to show only background color at first and then, when some view hierarchy is mounted, `splash.image` will be shown as contained image.
+- **cover** - Same behaviour as in **contain** mode in terms of firstly showing background color and then mounting some view hierarchy presenting splash image that covers whole screen.
+- **native** - In this mode your app will be leveraging Android's ability to present a static bitmap at the very beginning of the application start. Unfortunately, Android (unlike iOS) is not supporting stretching provided image, so the application will just present given image centered on the screen. By default `splash.image` would be used as the `xxxdpi` resource. It's up to you to provide graphics that meet your expectations and fit the screen dimension. To achieve this, use different resolutions for [different device DPIs](../../workflow/configuration/#android), from `mdpi` to `xxxhdpi`.
 
 ### Ejected ExpoKit apps
 
