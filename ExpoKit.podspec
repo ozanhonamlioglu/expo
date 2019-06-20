@@ -24,10 +24,12 @@ Pod::Spec.new do |s|
     ss.dependency 'AppAuth', '~> 0.4'
     ss.dependency 'CocoaLumberjack', '~> 3.2.1'
     ss.dependency 'Crashlytics', '~> 3.8'
+
     ss.dependency 'FBAudienceNetwork', '4.99.0'
-    ss.dependency 'FBSDKCoreKit', '4.38.1'
-    ss.dependency 'FBSDKLoginKit', '4.38.1'
-    ss.dependency 'FBSDKShareKit', '4.38.1'
+    ss.dependency 'FacebookSDK', '4.39.0'
+    ss.dependency 'FacebookSDK/LoginKit', '4.39.0'
+    ss.dependency 'FacebookSDK/ShareKit', '4.39.0'
+
     ss.dependency 'Fabric', '~> 1.6'
     ss.dependency 'GoogleSignIn', '~> 4.1'
     ss.dependency 'GoogleMaps', '~> 2.5.0'
